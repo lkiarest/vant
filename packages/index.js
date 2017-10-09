@@ -12,6 +12,9 @@ import CellSwipe from './cell-swipe';
 import Checkbox from './checkbox';
 import CheckboxGroup from './checkbox-group';
 import Col from './col';
+import ContactCard from './contact-card';
+import ContactEdit from './contact-edit';
+import ContactList from './contact-list';
 import CouponCell from './coupon-cell';
 import CouponList from './coupon-list';
 import DatetimePicker from './datetime-picker';
@@ -54,7 +57,7 @@ import TreeSelect from './tree-select';
 import Uploader from './uploader';
 import Waterfall from './waterfall';
 
-const version = '0.9.9';
+const version = '0.9.10';
 const components = [
   Actionsheet,
   AddressEdit,
@@ -70,6 +73,9 @@ const components = [
   Checkbox,
   CheckboxGroup,
   Col,
+  ContactCard,
+  ContactEdit,
+  ContactList,
   CouponCell,
   CouponList,
   DatetimePicker,
@@ -138,6 +144,9 @@ export {
   Checkbox,
   CheckboxGroup,
   Col,
+  ContactCard,
+  ContactEdit,
+  ContactList,
   CouponCell,
   CouponList,
   DatetimePicker,

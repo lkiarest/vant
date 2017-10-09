@@ -2,8 +2,8 @@
   <router-view></router-view>
 </template>
 
-<style>
+<style lang="postcss">
 body {
-  -webkit-font-smoothing: antialiased;    
+  -webkit-font-smoothing: antialiased;
 }
 </style>
