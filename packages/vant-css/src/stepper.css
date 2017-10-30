@@ -7,14 +7,15 @@
     .van-stepper__input,
     .van-stepper__minus,
     .van-stepper__plus {
-      border-color: $active-color;
+      color: #111;
     }
   }
 
   &__stepper {
-    width: 40px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     box-sizing: border-box;
+    color: $border-color;
     background-color: $white;
     border: 1px solid $border-color;
     position: relative;
@@ -40,7 +41,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: #6c6c6c;
+      background-color: #111;
     }
   }
 
@@ -52,8 +53,12 @@
     }
 
     &--disabled {
-      background-color: $background-color;
-      border-color: $active-color $border-color $active-color $active-color;
+      &::before,
+      &::after {
+        background-color: $border-color;
+      }
+      // background-color: $background-color;
+      // border-color: $active-color $border-color $active-color $active-color;
     }
   }
 
@@ -61,20 +66,21 @@
     border-radius: 0 2px 2px 0;
 
     &--disabled {
-      background-color: $background-color;
-      border-color: $active-color $active-color $active-color $border-color;
+      color: $border-color;
+      // background-color: $background-color;
+      // border-color: $active-color $active-color $active-color $border-color;
     }
   }
 
   &__input {
     width: 33px;
-    height: 26px;
+    height: 20px;
     padding: 1px;
     border: 1px solid $border-color;
     border-width: 1px 0;
     border-radius: 0;
     box-sizing: content-box;
-    color: $gray-darker;
+    color: #111;
     font-size: 14px;
     vertical-align: middle;
     text-align: center;

@@ -92,7 +92,7 @@ export default {
   methods: {
     // 纠正value值
     correctValue(value) {
-      if (Number.isNaN(value)) {
+      if (isNaN(value)) {
         value = this.min;
       } else {
         value = Math.max(this.min, value);

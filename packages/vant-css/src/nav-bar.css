@@ -9,12 +9,12 @@
   background-color: #fff;
 
   .van-icon {
-    color: $blue;
+    color: $button-default-color;
     vertical-align: middle;
   }
 
   &__arrow {
-    transform: rotate(180deg);
+    transform: rotate(180deg) scaleY(1.2);
 
     + .van-nav-bar__text {
       margin-left: -20px;
