@@ -1,5 +1,5 @@
 <template>
-  <div class="van-stepper" :class="{ 'van-stepper--disabled': disabled }">
+  <div class="van-stepper" :class="{ 'van-stepper--disabled': disabled, 'van-stepper--large': large }">
     <button
       @click="handleChange('minus')"
       class="van-stepper__stepper van-stepper__minus"
@@ -42,6 +42,7 @@ export default {
       default: 1
     },
     disabled: Boolean,
+    large: Boolean, // 大尺寸
     disableInput: Boolean,
     defaultValue: {
       type: [String, Number],
@@ -92,7 +93,7 @@ export default {
   methods: {
     // 纠正value值
     correctValue(value) {
-      if (isNaN(value)) {
+      if (Number.isNaN(value)) {
         value = this.min;
       } else {
         value = Math.max(this.min, value);

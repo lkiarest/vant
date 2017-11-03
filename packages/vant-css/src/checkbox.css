@@ -43,7 +43,7 @@ $van-checkbox-size: 14px;
 
   &__label {
     display: block;
-    // margin-left: 37px;
+    margin-left: 28px;
     line-height: calc($van-checkbox-size + 2px);
     color: #111;
   }

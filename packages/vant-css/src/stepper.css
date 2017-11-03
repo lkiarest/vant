@@ -11,6 +11,17 @@
     }
   }
 
+  &--large {
+    .van-stepper__stepper {
+      width: 46px;
+      height: 40px;
+    }
+    .van-stepper__input {
+      width: 66px;
+      height: 36px;
+    }
+  }
+
   &__stepper {
     width: 24px;
     height: 24px;
