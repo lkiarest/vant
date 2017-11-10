@@ -8,24 +8,26 @@
     margin-left: 15px;
   }
 
-  .title-actionsheet p {
+  p {
     padding: 20px;
   }
 }
 </style>
 
 <script>
+import { Toast } from 'packages/index';
+
 export default {
   data() {
     return {
       show1: false,
       show2: false,
       show3: false,
-      actions1: [
+      actions: [
         {
           name: '微信安全支付',
           className: 'actionsheet-wx',
-          callback: this.handleActionClick
+          callback: this.onClick
         },
         {
           name: '支付宝支付',
@@ -42,8 +44,8 @@ export default {
   },
 
   methods: {
-    handleActionClick(item) {
-      console.log(item);
+    onClick(item) {
+      Toast(item.name);
     }
   }
 }
@@ -61,14 +63,12 @@ Vue.component(Actionsheet.name, Actionsheet);
 ### 代码演示
 
 #### 基础用法
-
-需要传入一个`actions`的属性，该属性为一个数组，数组的每一项是一个对象，可以根据下面的[action对象](#actions)设置你想要的信息。
+需要传入一个`actions`的数组，数组的每一项是一个对象，对象属性见文档下方表格。
 
 :::demo 基础用法
 ```html
-<van-button @click="show1 = true">弹出actionsheet</van-button>
-<van-actionsheet v-model="show1" :actions="actions1">
-</van-actionsheet>
+<van-button @click="show1 = true">弹出 Actionsheet</van-button>
+<van-actionsheet v-model="show1" :actions="actions" />
 ```
 
 ```javascript
@@ -76,11 +76,11 @@ export default {
   data() {
     return {
       show1: false,
-      actions1: [
+      actions: [
         {
           name: '微信安全支付',
           className: 'actionsheet-wx',
-          callback: this.handleActionClick
+          callback: this.onClick
         },
         {
           name: '支付宝支付',
@@ -97,8 +97,8 @@ export default {
   },
 
   methods: {
-    handleActionClick(item) {
-      console.log(item);
+    onClick(item) {
+      Toast(item.name);
     }
   }
 }
@@ -111,8 +111,8 @@ export default {
 
 :::demo 带取消按钮的 Actionsheet
 ```html
-<van-button @click="show2 = true">弹出带取消按钮的actionsheet</van-button>
-<van-actionsheet v-model="show2" :actions="actions1" cancel-text="取消">
+<van-button @click="show2 = true">弹出带取消按钮的 Actionsheet</van-button>
+<van-actionsheet v-model="show2" :actions="actions" cancel-text="取消">
 </van-actionsheet>
 ```
 
@@ -121,11 +121,11 @@ export default {
   data() {
     return {
       show2: false,
-      actions1: [
+      actions: [
         {
           name: '微信安全支付',
           className: 'actionsheet-wx',
-          callback: this.handleActionClick
+          callback: this.onClick
         },
         {
           name: '支付宝支付',
@@ -150,8 +150,8 @@ export default {
 
 :::demo 带标题的 Actionsheet
 ```html
-<van-button @click="show3 = true">弹出带标题的actionsheet</van-button>
-<van-actionsheet v-model="show3" title="支持以下配送方式" class="title-actionsheet">
+<van-button @click="show3 = true">弹出带标题的 Actionsheet</van-button>
+<van-actionsheet v-model="show3" title="支持以下配送方式">
   <p>一些内容</p>
 </van-actionsheet>
 ```
@@ -159,20 +159,20 @@ export default {
 
 ### API
 
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| actions | 行动按钮数组 | `Array`  | `[]` |    |
-| title | 标题 | `String`  |  |    |
-| cancelText | 取消按钮文案 | `String`  |  |    |
-| overlay | 是否显示遮罩 | `Boolean`  |  |    |
-| closeOnClickOverlay | 点击遮罩是否关闭`Actionsheet` | `Boolean`  |  |    |
+| actions | 行动按钮数组 | `Array` | `[]` | - |
+| title | 标题 | `String` | - | - |
+| cancelText | 取消按钮文案 | `String` | - | - |
+| overlay | 是否显示遮罩 | `Boolean` | - | - |
+| closeOnClickOverlay | 点击遮罩是否关闭`Actionsheet` | `Boolean` | - | - |
 
 ### actions
 
 
 `API`中的`actions`为一个对象数组，数组中的每一个对象配置每一列，每一列有以下`key`：
 
-| key       | 说明      |
+| key | 说明 |
 |-----------|-----------|
 | name | 标题 |
 | subname | 二级标题 |

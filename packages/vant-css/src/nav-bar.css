@@ -6,7 +6,7 @@
   user-select: none;
   text-align: center;
   line-height: 46px;
-  background-color: #fff;
+  background-color: $white;
 
   .van-icon {
     color: $button-default-color;
@@ -14,7 +14,7 @@
   }
 
   &__arrow {
-    transform: rotate(180deg) scaleY(1.2);
+    transform: rotate(180deg);
 
     + .van-nav-bar__text {
       margin-left: -20px;

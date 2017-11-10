@@ -35,6 +35,7 @@ import { Button } from 'vant';
 
 ```js
 import { Button } from 'vant/lib/button';
+import 'vant/lib/vant-css/base.css';
 import 'vant/lib/vant-css/button.css';
 ```
  
@@ -48,26 +49,15 @@ import 'vant/lib/vant-css/index.css';
 Vue.use(Vant);
 ```
 
-### 自定义主题
+### CDN
 
-`Vant`提供了一套默认主题，CSS 命名采用 BEM 的风格，方便使用者覆盖样式。如果你想完全替换主题色或者部分样式，可以使用下面的方法：
+```html
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/vant/lib/vant-css/index.css">
 
-#### 下载主题
-
-可以通过 Github 或 npm 来下载主题：
-
-```bash
-# npm
-npm i vant-css -D
-
-# github
-git clone git@github.com:youzan/vant.git
-cd packages/vant-css
+<!-- 引入组件 --><script></script>
+<script src="https://unpkg.com/vant/lib/vant.min.js"></script>
 ```
-
-#### 修改主题
-
-修改你下载主题对应的样式即可，然后引入你修改后的主题。
 
 ### vue-cli 模板
 可以使用`vue-cli`来初始化`Vant`的通用模板：

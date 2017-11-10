@@ -78,7 +78,7 @@ const icons = [
   'credit-pay',
   'debit-pay',
   'other-pay',
-  'cart',
+  'shopping-cart',
   'browsing-history',
   'goods-collect',
   'shop-collect',
@@ -108,9 +108,13 @@ const icons = [
   'description',
   'card',
   'gift-card',
-  'coupon',
   'completed',
-  'value-card'
+  'value-card',
+  'certificate',
+  'tosend',
+  'sign',
+  'home',
+  'phone'
 ];
 
 const IconListConstructor = Vue.extend({
@@ -163,6 +167,6 @@ Vue.component(Icon.name, Icon);
 
 ### API
 
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| name | icon名称 | `String`  | `''` | - |
+| name | icon名称 | `String` | `''` | - |

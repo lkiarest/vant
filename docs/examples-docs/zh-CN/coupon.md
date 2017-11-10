@@ -139,7 +139,7 @@ export default {
 
 ### CouponCell API
 
-| 参数       | 说明      | 类型       | 默认值       | 必须      |
+| 参数 | 说明 | 类型 | 默认值 | 必须 |
 |-----------|-----------|-----------|-------------|-------------|
 | title | 单元格标题 | `String` | `优惠` | - |
 | chosenCoupon | 当前选中优惠券的索引 | `Number` | `-1` | - |
@@ -148,7 +148,7 @@ export default {
 
 ### CouponList API
 
-| 参数       | 说明      | 类型       | 默认值       | 必须      |
+| 参数 | 说明 | 类型 | 默认值 | 必须 |
 |-----------|-----------|-----------|-------------|-------------|
 | v-model | 是否展示优惠券列表 | `Boolean` | `false` | - |
 | chosenCoupon | 当前选中优惠券的索引 | `Number` | `-1` | - |
@@ -157,20 +157,22 @@ export default {
 | exchangeButtonText | 兑换按钮文字 | `String` | `兑换` | - |
 | exchangeButtonDisabled | 是否禁用兑换按钮 | `Boolean` | `false` | - |
 | displayedCouponIndex | 滚动至特定优惠券位置 | `Number` | - | - |
+| showCloseButton | 是否显示列表底部按钮 | `Boolean` | `true` | - |
 | closeButtonText | 列表底部按钮文字 | `String` | 不使用优惠 | - |
 | disabledListTitle | 不可用券列表标题 | `String` | 不可用优惠 | - |
 | inputPlaceholder | 输入框文字提示 | `String` | 请输入优惠码 | - |
+| showExchangeBar | 是否展示兑换栏 | `Boolean` | `true` | - |
 
 ### CouponList Event
 
-| 事件名       | 说明      | 参数       |
+| 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
 | change | 优惠券切换回调 | index, 选中优惠券的索引 |
 | exchange | 兑换优惠券回调 | code, 兑换码 |
 
 ### 数据格式
 #### 优惠券字段说明
-| key       | 说明      | 类型       |
+| key | 说明 | 类型 |
 |-----------|-----------|-----------|
 | id | 优惠券 id | `String` |
 | name | 优惠券名称 | `String` |

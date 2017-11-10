@@ -6,7 +6,9 @@ let instance;
 const defaultOptions = {
   visible: true,
   type: 'text',
+  position: 'middle',
   duration: 3000,
+  mask: false,
   forbidClick: false,
   clear: () => {
     instance.visible = false;
