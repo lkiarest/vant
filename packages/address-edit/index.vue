@@ -11,13 +11,13 @@
       />
       <van-field
         type="tel"
-        label="电话号码"
-        placeholder="11位手机号"
+        label="联系电话"
+        placeholder="手机或固定电话"
         v-model="currentInfo.tel"
         :error="errorInfo.tel"
         @focus="onFocus('tel')"
       />
-      <van-cell class="van-address-edit__area" title="选择地区" @click="showAreaSelect = true">
+      <van-cell class="van-address-edit__area" title="收件地区" @click="showAreaSelect = true">
         <span>{{ currentInfo.province || '选择省' }}</span>
         <span>{{ currentInfo.city || '选择市' }}</span>
         <span>{{ currentInfo.county || '选择区' }}</span>
@@ -46,14 +46,13 @@
       <van-field
         v-if="showEmail"
         type="email"
+        class="van-hairline--top"
         label="邮箱"
         placeholder="常用邮箱"
         v-model="currentInfo.email"
-        maxlength="40"
-        class="van-hairline--top"
         :error="errorInfo.email"
-        @focus="onFocus('email')">
-      </van-field>
+        @focus="onFocus('email')"
+      />
       <van-switch-cell
         v-if="showSetDefault"
         v-show="!hideBottomFields"
@@ -109,8 +108,8 @@ export default {
     isDeleting: Boolean,
     areaList: Object,
     showPostal: Boolean,
-    showEmail: Boolean,
     showSetDefault: Boolean,
+    showEmail: Boolean,
     showSearchResult: Boolean,
     confirmText: {
       type: String,
@@ -206,9 +205,9 @@ export default {
       const items = [
         'name',
         'tel',
-        'email',
         'area_code',
-        'address_detail'
+        'address_detail',
+        'email'
       ];
 
       if (this.showPostal) {
@@ -235,8 +234,6 @@ export default {
       switch (key) {
         case 'name':
           return value ? value.length <= 15 ? '' : '名字过长，请重新输入' : '请填写名字';
-        case 'email':
-          return ((!value) || validateEmail(value)) ? '' : '请填写正确的邮箱地址';
         case 'tel':
           return validateMobile(value) ? '' : '请填写正确的手机号码或电话号码';
         case 'area_code':
@@ -245,6 +242,8 @@ export default {
           return value ? value.length <= 200 ? '' : '详细地址不能超过200个字符' : '请填写详细地址';
         case 'postal_code':
           return value && !/^\d{6}$/.test(value) ? '邮政编码格式不正确' : '';
+        case 'email':
+          return value ? (validateEmail(value) ? '' : '邮箱格式不正确') : '';
       }
     },
 
