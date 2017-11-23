@@ -9,7 +9,7 @@ $van-checkbox-size: 14px;
     color: #fff;
     display: block;
     line-height: 1;
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
     pointer-events: none;
     border: 1px solid $gray-dark;
@@ -65,7 +65,7 @@ $van-checkbox-size: 14px;
 
     .van-checkbox__control:checked + .van-icon-success {
       border-color: #d1dbe5;
-      background-color: #d1dbe5;      
+      background-color: #d1dbe5;
     }
   }
 }
