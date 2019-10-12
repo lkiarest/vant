@@ -1,19 +1,39 @@
-<p>
-    <a href="https://github.com/youzan/"><img alt="有赞logo" width="36px" src="https://img.yzcdn.cn/public_files/2017/02/09/e84aa8cbbf7852688c86218c1f3bbf17.png" alt="youzan">
-    </a>
-</p>
 <p align="center">
-    <img alt="项目logo" src="https://img.yzcdn.cn/upload_files/2017/04/20/FlkVrSlOr-SGK9qQqtilN6-IFZyT.png">
+    <img alt="logo" src="https://img.yzcdn.cn/vant/logo.png" width="120" height="120" style="margin-bottom: 10px;">
 </p>
-<p align="center">A Vue.js 2.0 Mobile UI at YouZan</p>
 
-[![Build Status](https://travis-ci.org/youzan/vant.svg?branch=master)](https://travis-ci.org/youzan/vant) 
-[![downloads](https://img.shields.io/npm/dt/vant.svg)](https://www.npmjs.com/package/vant) 
-[![Coverage Status](https://img.shields.io/codecov/c/github/youzan/vant/dev.svg)](https://codecov.io/github/youzan/vant?branch=dev)
-[![npm version](https://img.shields.io/npm/v/vant.svg?style=flat)](https://www.npmjs.com/package/vant) 
-[![license](https://img.shields.io/npm/l/vant.svg)](https://www.npmjs.com/package/vant)
- 
-[访问中文版](./README.zh-CN.md)
+<h3 align="center" style="margin: 30px 0 35px;">Mobile UI Components built on Vue</h3>
+
+<p align="center">
+    <img src="https://img.shields.io/npm/v/vant.svg?style=flat-square" alt="npm version" />
+    <img src="https://img.shields.io/codecov/c/github/youzan/vant/dev.svg?style=flat-square" alt="Coverage Status" />
+    <img src="https://travis-ci.org/youzan/vant.svg?branch=master" alt="Build Status" />
+    <img src="https://img.shields.io/npm/dt/vant.svg?style=flat-square" alt="downloads" />
+    <img src="https://img.shields.io/npm/dm/vant.svg?style=flat-square" alt="downloads" />
+    <img src="https://img.badgesize.io/https://unpkg.com/vant/lib/vant.min.js?compression=gzip&style=flat-square&label=JS%20gzip%20size" alt="JS Gzip Size" />
+    <img src="https://img.badgesize.io/https://unpkg.com/vant/lib/index.css?compression=gzip&style=flat-square&label=CSS%20gzip%20size" alt="CSS Gzip Size" />
+</p>
+
+<p align="center">
+  🔥 <a href="https://youzan.github.io/vant">文档网站</a>
+  &nbsp;
+  🇨🇳 <a href="./README.zh-CN.md">中文版介绍</a>
+  &nbsp;
+  🚀 <a href="https://github.com/youzan/vant-weapp" target="_blank">小程序版</a>
+</p>
+
+---
+
+## Features
+
+* 60+ Reusable components
+* 95% Unit test coverage
+* Extensive documentation and demos
+* Support [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
+* Support Custom Theme
+* Support i18n
+* Support TS
+* Support SSR
 
 ## Features
 
@@ -29,60 +49,40 @@
 
 ## Install
 
-```shell
-npm i -S vant
-```
- 
-## Quickstart
-
-#### 1. Use [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (Recommended)
 ```bash
-# Install babel-plugin-import
-npm i babel-plugin-import -D
+# Using npm
+npm i vant -S
+
+# Using yarn
+yarn add vant
 ```
 
-```js
-// set babel config in .babelrc or babel-loader
-{
-  "plugins": [
-    ["import", { "libraryName": "vant", "style": true }]
-  ]
-}
-```
-
-Then you can import components from vant, equivalent to import manually below.
-
-```js
-import { Button } from 'vant';
-```
-
-#### 2. Manually import
-
-```js
-import { Button } from 'vant/lib/button';
-import 'vant/lib/vant-css/base.css';
-import 'vant/lib/vant-css/button.css';
-```
- 
-#### 3. Import all components
+## Quickstart
 
 ```js
 import Vue from 'vue';
-import Vant from 'vant';
-import 'vant/lib/vant-css/index.css';
+import { Button } from 'vant';
+import 'vant/lib/index.css';
 
-Vue.use(Vant);
+Vue.use(Button);
 ```
 
-### CDN
+See more in [Quickstart](https://youzan.github.io/vant#/en-US/quickstart).
 
-```html
-<!-- import style -->
-<link rel="stylesheet" href="https://unpkg.com/vant/lib/vant-css/index.css" />
+## Contribution
 
-<!-- import script --><script></script>
-<script src="https://unpkg.com/vant/lib/vant.min.js"></script>
-```
+Please make sure to read the [Contributing Guide](./.github/CONTRIBUTING.md) before making a pull request.
+
+## Browser Support
+
+Modern browsers and Android 4.0+, iOS 7+.
+
+## Links
+
+* [Documentation](https://youzan.github.io/vant)
+* [Changelog](https://youzan.github.io/vant#/en-US/changelog)
+* [Vant Demo](https://github.com/youzan/vant-demo)
+* [Vant Weapp](https://github.com/youzan/vant-weapp)
 
 See more in [Quickstart](https://www.youzanyun.com/zanui/vant#/en-US/component/quickstart).
  
@@ -102,8 +102,14 @@ Modern browsers and Android 4.0+, iOS 6+.
 ## Preview
 You can scan the following QR code to access the demo：
 
-![qrcode](https://img.yzcdn.cn/v2/image/youzanyun/zanui/pc/zanui_vue_mobile_preview_03.png)
- 
+<img src="https://img.yzcdn.cn/vant/preview_qrcode_20180528.png" width="220" height="220" >
+
+## Wechat Group
+
+Scan the qrcode to join our wechat discussion group, please note that you want to join Vant discussion group.
+
+<img src="https://img.yzcdn.cn/vant/wechat_20180606.png" width="220" height="292" >
+
 ## LICENSE
 
-[MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89)
+[MIT](https://en.wikipedia.org/wiki/MIT_License)

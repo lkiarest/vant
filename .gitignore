@@ -3,15 +3,16 @@
 .DS_Store
 .idea
 .vscode
-packages/**/lib
-lib/
-lib/*
-!lib/index.js
-!lib/style.css
+
+# npm
 node_modules
-example/dist
-/docs/dist
-test/unit/coverage
-packages/vant-css/build
-packages/vant-css/icons
-docs/examples-dist
+package-lock.json
+
+# dist file
+es
+lib
+dist
+docs/dist
+changelog.generated.md
+test/coverage
+vetur

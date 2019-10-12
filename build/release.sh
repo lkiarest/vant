@@ -1,6 +1,3 @@
-git checkout master
-git merge dev
-
 #!/usr/bin/env sh
 set -e
 echo "Enter release version: "
@@ -10,29 +7,22 @@ read -p "Releasing $VERSION - are you sure? (y/n)" -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-  echo "Releasing $VERSION ..."
-
   # build
-  VERSION=$VERSION npm run dist
-
-  # publish vant-css
-  echo "Releasing vant-css $VERSION ..."
-  cd packages/vant-css
-  npm version $VERSION --message "[release] $VERSION"
-  npm publish
-  cd ../..
+  npm version $VERSION --no-git-tag-version
+  VERSION=$VERSION npm run build:lib
 
   # commit
-  git add -A
-  git commit -m "[build] $VERSION"
-  npm version $VERSION --message "[release] $VERSION"
+  git tag v$VERSION
+  git commit -am "build: release $VERSION"
 
   # publish
-  git push origin master
-  git push origin refs/tags/v$VERSION
-  git checkout dev
-  git rebase master
   git push origin dev
+  git push origin refs/tags/v$VERSION
 
-  npm publish
+  if [[ $VERSION =~ [beta] ]]
+  then
+    npm publish --tag beta
+  else 
+    npm publish
+  fi
 fi

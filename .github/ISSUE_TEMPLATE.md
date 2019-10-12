@@ -1,11 +1,9 @@
-### 请认真写 PR 的标题，会用于生成 change log。
+你好，请使用下面的链接创建 issue 以帮助我们更快的排查问题，不规范的 issue 会被关闭，感谢配合。
 
-**Do you want to request a *feature* or report a *bug*?**
+https://youzan.github.io/vant-issue-generater
 
-**What is the current behavior?**
+---
 
-**If the current behavior is a bug, please provide the steps to reproduce and if possible a minimal demo of the problem via https://jsfiddle.net or similar (template: https://jsfiddle.net/n879nke7/).**
+Please use the link below to create a new issue, the non-standard issue will be closed.
 
-**What is the expected behavior?**
-
-**Which versions of Vant and Vue, and which browser / OS are affected by this issue? Did this work in previous versions of Vant?**
+https://youzan.github.io/vant-issue-generater
