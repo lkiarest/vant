@@ -5,6 +5,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const babel = require('@babel/core');
 const markdownVetur = require('@vant/markdown-vetur');
+const userConfig = require('./user.config');
 
 const esDir = path.join(__dirname, '../es');
 const libDir = path.join(__dirname, '../lib');
@@ -61,6 +62,6 @@ compile(libDir);
 markdownVetur.parseAndWrite({
   path: srcDir,
   test: /zh-CN\.md/,
-  tagPrefix: 'van-',
+  tagPrefix: `${userConfig.prefix}-`,
   outputDir: veturDir
 });

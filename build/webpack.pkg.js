@@ -1,17 +1,18 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const config = require('./webpack.base');
+const userConfig = require('./user.config');
 
 const isMinify = process.argv.indexOf('-p') !== -1;
 
 module.exports = merge(config, {
   mode: 'production',
   entry: {
-    vant: './es/index.js'
+    [userConfig.libName]: './es/index.js'
   },
   output: {
     path: path.join(__dirname, '../lib'),
-    library: 'vant',
+    library: userConfig.libName,
     libraryTarget: 'umd',
     filename: isMinify ? '[name].min.js' : '[name].js',
     umdNamedDefine: true,
